@@ -1,0 +1,124 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Courier New';
+  color: blue;
+}
+
+main {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 15px;
+  align-items: center;
+}
+
+select {
+  width: 320px;
+  font-size: 14px;
+  height: 32px;
+}
+
+.apply-filter {
+  padding-bottom: 15px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.apply-button {
+  font-size: 16px;
+  background-color: dodgerblue;
+  border: 2px solid dodgerblue;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.apply-button:hover {
+  border-color: white;
+}
+
+.apply-button:active {
+  border-color: dodgerblue;
+  background-color: white;
+  color: black;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 3%;
+  justify-items: center;
+}
+
+.card {
+  width: 150px;                 /* Set width of cards */
+  border: 1px solid #80DEEA;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  margin: 5px;                  /* Add space between cards */
+  background-color: #E0F7FA;
+}
+
+.card-room {
+  color: #0097A7;
+  text-align: left;
+  font-size: 21px;
+  background-color: #E0F7FA;
+  padding: 5px 10px;
+}
+
+.card-room-type {
+  color: #0097A7;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #E0F7FA;
+  padding: 5px 10px;
+  height: 45px;
+}
+
+.card-building {
+  color: #0097A7;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #E0F7FA;
+  padding: 5px 10px;
+}
+
+.main-description {
+  color: #0097A7;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 0;
+  border-top: 1px solid #80DEEA;
+  background-color: #E0F7FA;
+  padding: 1px 10px;
+}
+
+@media (max-width:600px) {
+  main {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  select {
+    width: 100%
+  }
+}

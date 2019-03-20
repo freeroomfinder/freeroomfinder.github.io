@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Free Space Finder - Adelaide Uni</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Free Space Finder</h1>
+    </header>
+
+    <main>
+
+    <!--maybe change to form, but what is action-->
+      <div class="filters">
+        <div class="filter">
+          <label for="building-select">Which building?</label>
+          <select id="building-select">
+            <option value="115-grenfell">115 Grenfell St</option>
+            <option value="ahms">AHMS</option>
+            <option value="badger">Badger</option>
+            <option value="barr-smith-south">Barr Smith South</option>
+            <option value="benham">Benham</option>
+            <option value="callaghan">Callaghan</option>
+            <option value="charles-hawker">Charles Hawker</option>
+            <option value="darling-west">Darling West</option>
+            <option value="eastick">Eastick</option>
+            <option value="elder-hall">Elder Hall</option>
+            <option value="eng-maths">Engineering & Mathematics</option>
+            <option value="eng-annex">Engineering Annex</option>
+            <option value="eng-north">Engineering North</option>
+            <option value="eng-south">Engineering South</option>
+            <option value="hartley">Hartley</option>
+            <option value="helen-mayo-north">Helen Mayo North</option>
+            <option value="helen-mayo-south">Helen Mayo South</option>
+            <option value="horace-lamb">Horace Lamb</option>
+            <option value="hughes">Hughes</option>
+            <option value="info-centre">Information Centre</option>
+            <option value="ing-wardli">Ingkarni Wardli</option>
+            <option value="johnson">Johnson</option>
+            <option value="leske">Leske</option>
+            <option value="ligertwood">Ligertwood</option>
+            <option value="lower-napier">Lower Napier</option>
+            <option value="madley">Madley</option>
+            <option value="marjoribanks">Marjoribanks</option>
+            <option value="mawson">Mawson</option>
+            <option value="mol-life">Molecular Life Sciences</option>
+            <option value="napier">Napier</option>
+            <option value="nexus">Nexus10</option>
+            <option value="pet-eng">Petroleum Engineering</option>
+            <option value="physics">Physics</option>
+            <option value="plant-gen">Plant Genomics Centre</option>
+            <option value="rose-hall">Roseworthy College Hall</option>
+            <option value="schulz">Schulz</option>
+            <option value="scott">Scott Theatre</option>
+            <option value="south-barns">Southern Barns</option>
+            <option value="braggs">The Braggs</option>
+            <option value="union-house">Union House</option>
+            <option value="vet-sci">Veterinary Science</option>
+            <option value="waite">Waite</option>
+            <option value="williams">Williams</option>
+            <option value="wine-inno">Wine Innovation Central</option>
+            <option value="wine-sci">Wine Science</option>
+            <option value="woolhouse">Woolhouse Library</option>
+          </select> 
+        </div>
+        <div class="filter">
+          <label for="room-type-select">What kind of room are you looking for?</label>
+          <select id="room-type-select">
+            <option value="1">Computer Room</option>
+            <option value="2">Lecture Theatre</option>
+            <option value="3">Tutorial Room</option>
+            <option value="4">Laboratory</option>
+            <option value="5">Meeting Room</option>
+            <option value="6">Music Rehearsal/Studio</option>
+            <option value="0">Other</option>
+          </select> 
+        </div>
+      </div>
+
+      <div class="apply-filter">
+        <button class="apply-button" onclick="window.get()">
+          Find
+        </button>
+      </div>
+
+      <div id="results" class="cards">
+      </div>
+
+    </main>
+
+  </body>
+
+  <script src="alasql.min.js"></script>
+  <script src="pako_inflate.min.js"></script>
+  <script src="filter.js"></script>
+
+</html>
