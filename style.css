@@ -68,7 +68,7 @@ select {
 }
 
 .card {
-  width: 150px;                 /* Set width of cards */
+  width: 130px;                 /* Set width of cards */
   border: 1px solid #80DEEA;    /* Set up Border */
   border-radius: 4px;           /* Slightly Curve edges */
   overflow: hidden;             /* Fixes the corners */
