@@ -37,16 +37,14 @@ window.get = function() {
   var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
   // Get current time 
   var time = new Date();
-  /*
   const day = time.getDay();
   const hour = time.getHours();
   const minute = time.getMinutes();
-  */
-  ///*
+  /*
   const day = '1';
   const hour = '8';
   const minute = '30';
-  //*/
+  */
 
   var declare = 'DECLARE @hour int = ' + hour +
                 ';DECLARE @minute int = ' + minute +
@@ -145,7 +143,7 @@ window.get = function() {
     card_html += card;
   });
   
-  console.log(rooms);
+  //console.log(rooms);
 
   document.getElementById('results').innerHTML = card_html;
 
@@ -157,11 +155,11 @@ window.get = function() {
       'room_id=@room_id AND ' +
       'CAST(start_date AS DATETIME) <= GETDATE() AND ' +
       'CAST(end_date AS DATETIME) >= GETDATE() AND ' +
-      'day=1';
+      'day=@day';
 
     classes_query = alasql(scheduled_classes);
     classes_query.sort(function(a,b){return a.start_hour > b.start_hour});
-    console.log(classes_query);
+    //console.log(classes_query);
     return classes_query;
   }
 
@@ -179,7 +177,7 @@ window.get = function() {
       var html = "";
       html = '<div class="day-timeline">';
       classes.forEach(function callback(_class) {
-        console.log(_class);
+        //console.log(_class);
         html += '<div class="day-entry">';
         html += '<div class="course-time">';
         html += to_twelve_hour(_class.start_hour) + ' - ' + to_twelve_hour(_class.end_hour);
@@ -208,7 +206,7 @@ window.get = function() {
     };
     divs[i].onclick = function() {
       toggleModal();
-      console.log(this.id);
+      //console.log(this.id);
       var classes = getSchedule(this.id);
       add_classes_to_modal(classes);
     };
