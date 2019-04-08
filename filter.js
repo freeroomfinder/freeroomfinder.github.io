@@ -78,8 +78,8 @@ window.get = function() {
 
   var occupied_rooms = 'SELECT room_number FROM classes ' +
     'WHERE ' + 
-    'CAST(start_date AS DATETIME) <= GETDATE() AND ' +
-    'CAST(end_date AS DATETIME) >= GETDATE() AND ' +
+    'CONVERT(varchar(10), CAST(start_date AS DATETIME)) <= CONVERT(varchar(10), GETDATE()) AND ' +
+    'CONVERT(varchar(10), CAST(end_date AS DATETIME)) >= CONVERT(varchar(10), GETDATE()) AND ' +
     'start_hour <= @hour AND ' +
     'end_hour >= @hour AND ' +
     'end_minute >= CASE WHEN end_hour == @hour THEN @minute ELSE end_minute END AND ' +
@@ -99,8 +99,8 @@ window.get = function() {
 
   var future_classes ='SELECT room_number, start_hour FROM classes ' +
     'WHERE ' + 
-    'CAST(start_date AS DATETIME) <= GETDATE() AND ' +
-    'CAST(end_date AS DATETIME) >= GETDATE() AND ' +
+    'CONVERT(varchar(10), CAST(start_date AS DATETIME)) <= CONVERT(varchar(10), GETDATE()) AND ' +
+    'CONVERT(varchar(10), CAST(end_date AS DATETIME)) >= CONVERT(varchar(10), GETDATE()) AND ' +
     'start_hour >= @hour AND ' +
     //'end_hour <= @hour AND ' +
     'end_minute <= CASE WHEN end_hour == @hour THEN @minute ELSE end_minute END AND ' +
@@ -153,8 +153,8 @@ window.get = function() {
       'course_number, course_name FROM classes ' +
       'WHERE ' + 
       'room_id=@room_id AND ' +
-      'CAST(start_date AS DATETIME) <= GETDATE() AND ' +
-      'CAST(end_date AS DATETIME) >= GETDATE() AND ' +
+      'CONVERT(varchar(10), CAST(start_date AS DATETIME)) <= CONVERT(varchar(10), GETDATE()) AND ' +
+      'CONVERT(varchar(10), CAST(end_date AS DATETIME)) >= CONVERT(varchar(10), GETDATE()) AND ' +
       'day=@day';
 
     classes_query = alasql(scheduled_classes);
